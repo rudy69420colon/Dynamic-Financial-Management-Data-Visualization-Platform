@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Expense Tracker</title>
+    <link rel="stylesheet" href="style4.css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Poppins:100,100italic,200,200italic,300,300italic,regular,italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Expenditure Tracker</h1>
+
+      <div class="balance-container">
+        <div class="currency-selector" style="margin-bottom: 15px;">
+          <label for="currency-select" style="font-weight: 500;">Select Currency: </label>
+          <select id="currency-select" style="padding: 5px; font-family: 'Poppins', sans-serif; border-radius: 4px;">
+            <option value="INR">INR(₹)</option>
+            <option value="USD">USD($)</option>
+            <option value="EUR">EUR(€)</option>
+            <option value="GBP">GBP(£)</option>
+            <option value="JPY">JPY(¥)</option>
+          </select>
+        </div>
+
+        <div class="initial-balance-setup" style="margin-bottom: 15px;">
+          <label for="initial-balance-input" style="font-weight: 500; display: block; margin-bottom: 5px;">Set Starting Balance:</label>
+          <input type="number" id="initial-balance-input" placeholder="e.g. 5000" style="padding: 6px; border-radius: 4px; border: 1px solid #ccc; width: 160px;" />
+          <button id="set-balance-btn" style="padding: 6px 12px; cursor: pointer; border-radius: 4px; background-color: #333; color: #fff; border: none;">Set</button>
+        </div>
+
+        <h2>Your Net Balance</h2>
+        <h1 id="balance">0.00</h1>
+
+        <div class="summary">
+          <div class="income">
+            <h3>Income</h3>
+            <p id="income-amount">0.00</p>
+          </div>
+          <div class="expenses">
+            <h3>Expenditure</h3>
+            <p id="expense-amount">0.00</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="main-content">
+        <div class="transaction-container">
+          <h2>Transactions</h2>
+          <ul id="transaction-list">
+          </ul>
+        </div>
+
+        <div class="form-container">
+          <h2>Add Transaction</h2>
+
+          <form id="transaction-form">
+            <div class="type-tabs">
+              <button type="button" class="tab-btn income-tab" data-type="income">Income</button>
+              <button type="button" class="tab-btn expense-tab active" data-type="expense">Expenditure</button>
+            </div>
+
+            <div class="form-group">
+              <label for="description">Description of Transaction</label>
+              <input type="text" id="description" placeholder="Enter description of the transaction made (e.g.: groceries, salary, etc....)" required />
+            </div>
+
+            <div class="form-group">
+              <label for="amount">Amount made in transaction</label>
+              <input type="number" id="amount" min="0.01" step="any" placeholder="Enter amount..." required />
+              </div>
+            <div class="form-group">
+            <label for="category">Category</label>
+            <select id="category" required>
+            <option value="Food"> Food</option>
+            <option value="Transport"> Transport</option>
+            <option value="Shopping"> Shopping</option>
+            <option value="Entertainment"> Entertainment</option>
+            <option value="Bills"> Bills</option>
+            <option value="Salary"> Salary</option>
+            <option value="Other"> Other</option>
+            </select>
+            </div>
+            <button type="submit">Add new Transaction</button>
+            <div class="chart-container">
+            <h2>Expense Breakdown</h2>
+            <canvas id="expenseChart"></canvas>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="script1.js"></script>
+  </body>
+</html>
