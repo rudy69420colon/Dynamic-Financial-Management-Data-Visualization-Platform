@@ -1,0 +1,2 @@
+# Dynamic-Financial-Management-Data-Visualization-Platform
+– Integrated Chart.js library to construct an interactive, hardware-accelerated doughnut visualization canvas, mapping dynamic category breakdown based on runtime mutation events. – Architected localized state persistence pipeline utilizing HTML5 LocalStorage API to store transaction blocks, offsets, custom currency settings across active sessions.
